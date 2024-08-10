@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 const multer = require("multer")
 const path = require("path")
-// const authMiddleware = require("./middleware/authMiddlware")
+const authMiddleware = require("./middleware/authMiddlware.js")
 const Blog = require("./models/blogModel")
 const User = require("./models/userModel")
 const nodemailer = require("nodemailer");
@@ -21,16 +21,16 @@ const app = express()
 
 app.use(express.json());
 app.use(express.static('public'))
-// app.use(bodyParser())
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors({
-    origin:"http://localhost:5173",
-    methods:["POST", "GET", "DELETE", "PUT"],
-    allowedHeaders:["Content-Type"]
-}))
-// app.use(cors());
+// app.use(cors({
+    // origin:"http://localhost:5173",
+    // methods:["POST", "GET", "DELETE", "PUT"],
+    // allowedHeaders:["Content-Type"]
+// }))
+app.use(cors());
 let otp;
 let success = false;
 

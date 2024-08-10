@@ -32,8 +32,8 @@ export const Authprovider = ({children}) =>{
                          Authorization: `Bearer ${token}`
                     }
                }).then((res)=>{
-                    setUser(res.data.userName);
-                    setUserEmail(res.data.userEmail);
+                    setUser(res.data?.userName);
+                    setUserEmail(res.data?.userEmail);
 
                }).catch((err)=>{
                     console.log(`error from axios secret ${err}`)

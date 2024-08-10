@@ -195,7 +195,9 @@ blog?.likes.reverse().map((blog, index)=>{
 {blog?.comments.reverse().map((blog, index)=>{
 return <div className='comments' key={index}>
 <p className="commentsId">{blog?.userid}
-{blog?.userid === user && <span>
+{
+// blog?.userid === user && 
+<span>
   <Link to={`/blog/${id}/edit-comment/${id}/${blog?._id}`}><CiEdit className='editIcon icon'/> </Link> 
 <Link to={`/blog/${id}/delete-comment/${id}/${blog?._id}`}><MdDelete className='deleteIcon icon'/></Link> 
 </span>}
@@ -203,8 +205,8 @@ return <div className='comments' key={index}>
 {/* -------------EDIT COMMENT--------------------------  */}
 <div>
   <Routes>
-    {blog?.userid === user && <Route path='/edit-comment/:blogid/:commentid' element={<EditComment />}/>}
-    {blog?.userid === user && <Route path='/delete-comment/:blogid/:commentid' element={<DeleteComment />}/>}
+     <Route path="/edit-comment/:blogid/:commentid" element={<EditComment />}/>
+     <Route path="/delete-comment/:blogid/:commentid" element={<DeleteComment />}/>
   </Routes>
 
 </div>

@@ -47,7 +47,7 @@ function Home() {
     <p className='timePosted'>Posted at: 17-01-2024</p>
   </div>
 <div className='blogImg'>
-  <img src={`/images/${blog?.images}`}  alt='blogImage'/>
+  <img src={`http://localhost:5000/images/${blog?.images}`}  alt='blogImage'/>
 </div>
 <div className='blogContent'>
   <h2 className='title'>{blog?.thought}</h2>

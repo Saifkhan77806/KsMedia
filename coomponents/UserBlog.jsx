@@ -24,7 +24,7 @@ useEffect(()=>{
       <div className='profile'>
 
       <div className='profileContainer'>
-        {user.charAt(0).toUpperCase()}
+        {/* {user.charAt(0).toUpperCase()} */}
       </div>
       
       <div className='proflieUserId'>{user}</div>

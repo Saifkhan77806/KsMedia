@@ -15,7 +15,7 @@ function EditComment() {
 try{
 await Api.put("/editcomment", editdata).then((res)=>{
   navigate(`/blog/${blogid}`)
-  // console.log(res.data)
+  console.log(res.data)
 
 }).catch((err)=>{
   console.log(err);
@@ -26,7 +26,7 @@ await Api.put("/editcomment", editdata).then((res)=>{
   }
 
   return (
-    <div className='edDelContainer'>
+    <div>
       <input type="text" name="comment" onChange={(e)=> setEditdata({...editdata, [e.target.name]: e.target.value})} placeholder='Edit your comment here !!'/>
       <div className='btn'>
     <button className='update' onClick={update}>Update</button>

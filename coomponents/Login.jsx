@@ -24,7 +24,7 @@ const submits = async(e)=>{
 e.preventDefault();
 await Api.post("/login", user).then((res)=>{
   if(res.data.success){
-    // console.log(res.data.tokenCreated);
+    console.log(res.data.tokenCreated);
     storetokenInls(res.data.tokenCreated);
   navigate("/");
 

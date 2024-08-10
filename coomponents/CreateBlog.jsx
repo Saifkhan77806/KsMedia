@@ -51,11 +51,12 @@ function CreateBlog() {
     </Helmet>
       <h1>Create blog</h1>
       <form onSubmit={submits}>
-        <input type="text" name='userId' placeholder='Enter user id here' value={blog.userId} onChange={inputs} readOnly/>
+        <input type="text" name='userId' placeholder='Enter user id here' value={blog.userId} onChange={inputs} />
         <input type="text" name='thought' value={blog.thought} onChange={inputs} placeholder='Enter your thought here' />
         <textarea placeholder="Thought here ..." rows="10" name="title" value={blog.title} onChange={inputs}></textarea>
         <input type="file" name='images'  onChange={files} />
         <input type="submit" />
+        <img src={`http://localhost:5000/images/images_1723258032911.jfif`}  alt='blogImage'/>
       </form>
     </div>
   )

@@ -10,7 +10,7 @@ const register = async (req,res) =>{
         const {name, email, password, cpassword} = req.body;
         const hashPassword = await bcrypt.hash(password, 10);
         if(password === cpassword){
-            const isExistingUser = await User.findOne({name})
+            const isExistingUser = await User?.findOne({name})
             if(isExistingUser){
             res.status(200).send({msg: "user is already exists 1", success: false});
             }
@@ -59,8 +59,8 @@ const secret = async (req,res) =>{
     try{
 
         const userData = req.user;
-        console.log(userData.name);
-        res.status(200).send({userName: userData.name, userEmail: userData.email})
+        console.log(userData?.name);
+        res.status(200).send({userName: userData?.name, userEmail: userData?.email})
     }catch(err){
         console.log(`Error from the user route :- ${err}`)
     }
@@ -73,7 +73,7 @@ const uploadBlog = async(req,res) =>{
         console.log(req.file);
 
         const {userId, title, thought} = req.body;
-        const blogs = new Blog({userId, title, thought, images: req.file.filename})
+        const blogs = new Blog({userId, title, thought, images: req.file?.filename})
         await blogs.save();
 
         res.status(200).send(blogs);

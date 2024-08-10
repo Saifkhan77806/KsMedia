@@ -27,12 +27,12 @@ export default function Register() {
    await Api.post("/register", user).then((res)=>{
 
     if(res.data.success){
-    // console.log(res.data.tokenCreated);
+    console.log(res.data.tokenCreated);
     storetokenInls(res.data.tokenCreated);
   navigate("/");
 
 }else{
-  // console.log(res.data);
+  console.log(res.data);
   setData(res.data.msg);
 }
     // if(res.status===200){
