@@ -59,7 +59,7 @@ const secret = async (req,res) =>{
     try{
 
         const userData = req.user;
-        console.log(userData?.name);
+        console.log("ter",userData?.name);
         res.status(200).send({userName: userData?.name, userEmail: userData?.email})
     }catch(err){
         console.log(`Error from the user route :- ${err}`)
