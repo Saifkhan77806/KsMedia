@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {Helmet} from "react-helmet";
 // import axios from "axios";
 import Api from "./Api";
+import Card from "./Card"
 
 function Home() {
 
@@ -24,7 +25,7 @@ function Home() {
   
 
   return (
-    <div className='home'>
+    <div className='home mt-5'>
       <Helmet>
         <title>Home - K's Media</title>
       </Helmet>
@@ -33,30 +34,17 @@ function Home() {
       <Link to="/create-blog">
           Create
       </Link>  
-        </div>
-       
+        </div>       
       </div>
-      <h2>Blogs</h2>
 
-      <div className='blogs'>
-      {
- blog?.length && blog?.map((blog, index)=>{
- return (<div className='blog' key={index}>
-  <div className='blogUserData'>
-    <p className='userId'>{blog?.userId}</p>
-    <p className='timePosted'>Posted at: 17-01-2024</p>
-  </div>
-<div className='blogImg'>
-  <img src={`http://localhost:5000/images/${blog?.images}`}  alt='blogImage'/>
-</div>
-<div className='blogContent'>
-  <h2 className='title'>{blog?.thought}</h2>
-<Link to={`/blog/${blog?._id}`}>Read more</Link>
-</div>
-</div>)
-})
-}
-      </div>
+{/* <div className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-md:grid-cols-2">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+
+</div> */}
+
     </div>
   )
 }

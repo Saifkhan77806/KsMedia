@@ -11,7 +11,7 @@ import Blog from '../coomponents/Blog';
 import EditComment from '../coomponents/EditComment';
 import DeleteComment from '../coomponents/DeleteComment';
 import Profile from "../coomponents/Profile"
-import { StickyNavbar } from '../coomponents/Navbar';
+import Navbar from "../coomponents/Navbar"
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <> 
-   <StickyNavbar />
+   <Navbar />
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<Blog />} />

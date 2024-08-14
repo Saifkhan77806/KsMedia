@@ -22,7 +22,7 @@ function Profile() {
           mount: { scale: 1, y: 0 },
           unmount: { scale: 0.9, y: -100 },
         }}
-        className="shadow-md p-6"
+        className="shadow-md p-6  absolute right-3 mt-[85px] bg-gray-600 rounded-lg w-[100%] lg:w-[25%]"
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody>
