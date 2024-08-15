@@ -20,6 +20,9 @@ const Navbar = () => {
         <button className='border-none outline-none mr-3'>
           <Link to="/login">Login</Link>
         </button>
+        <button className='border-none outline-none mr-3'>
+          <Link to="/logout">Logout</Link>
+        </button>
         <Profile />
       </div>
       {

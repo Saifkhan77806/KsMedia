@@ -12,6 +12,7 @@ import EditComment from '../coomponents/EditComment';
 import DeleteComment from '../coomponents/DeleteComment';
 import Profile from "../coomponents/Profile"
 import Navbar from "../coomponents/Navbar"
+import { Logout } from '../pages/Logout';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <> 
    <Navbar />
     <Routes>
+      <Route path='/logout' element={<Logout />}/>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<Blog />} />
         <Route path='/register' element={<Register />}/>

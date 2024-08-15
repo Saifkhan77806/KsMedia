@@ -64,7 +64,7 @@ const __dirname1 = path.resolve()
 
 app.post("/register",register)
 app.post("/login", login)
-app.get("/secret", secret)
+app.get("/secret",authMiddleware, secret)
 app.post("/upload-blog",upload.single('images'), uploadBlog)
 app.get("/get-blog", getBlog);
 app.get("/blog/:id",blogById);

@@ -29,7 +29,7 @@ export const Authprovider = ({children}) =>{
           try{
                await Api.get("/secret",{
                     headers:{
-                         Authorization: `Bearer ${token}`
+                         Authorization: token
                     }
                }).then((res)=>{
                     setUser(res.data?.userName);
