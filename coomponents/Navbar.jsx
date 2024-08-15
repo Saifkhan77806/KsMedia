@@ -24,29 +24,29 @@ const Navbar = () => {
       </div>
       {
         isOpen ? 
-        <IoCloseSharp className='hidden max-[768px]:inline-block' onClick={()=> setIsopen(!isOpen)}/> :
-        <FiMenu className='hidden max-[768px]:inline-block' onClick={()=> setIsopen(!isOpen)}/> 
+        <IoCloseSharp className='hidden max-[768px]:inline-block cursor-pointer' onClick={()=> setIsopen(!isOpen)}/> :
+        <FiMenu className='hidden max-[768px]:inline-block cursor-pointer' onClick={()=> setIsopen(!isOpen)}/> 
       }
     </div>
       {
         isOpen && (
-          <div className='hidden max-[768px]:block '>
-           <ul>
-            <li>
+          <div className='hidden max-[768px]:block bg-green-600 pb-3 '>
+           <ul className=' bg-green-600 w-[100%]'>
+            <li className='py-3 border-gray-700 hover:bg-green-800 transition-all pl-3 hover:font-bold cursor-pointer'>  
               Homes
             </li>
-            <li>
+            <li className='py-3 border-gray-700 hover:bg-green-800 transition-all pl-3 hover:font-bold cursor-pointer'>  
               Search
             </li>
-            <li>
+            <li className='py-3 border-gray-700 hover:bg-green-800 transition-all pl-3 hover:font-bold mb-1 cursor-pointer'>  
               Trending
             </li>
            </ul>
            <div className='flex'>  
-            <button className='border-none outline-none mr-3'>
+            <button className='border-none outline-none mr-3 ml-3 transition-all hover:font-bold hover:bg-gray-200'>
           <Link to="register">Register</Link>
         </button>
-        <button className='border-none outline-none mr-3'>
+        <button className='border-none outline-none mr-3 transition-all hover:font-bold hover:bg-gray-200'>
           <Link to="/login">Login</Link>
         </button>
         <Profile />

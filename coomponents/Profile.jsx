@@ -22,7 +22,7 @@ function Profile() {
           mount: { scale: 1, y: 0 },
           unmount: { scale: 0.9, y: -100 },
         }}
-        className="shadow-md p-6  absolute right-3 mt-[85px] bg-gray-600 rounded-lg w-[100%] lg:w-[25%]"
+        className="shadow-md px-6  absolute right-3 mt-[85px] ml-0 bg-gray-600 rounded-lg w-[25%] max-[768px]:w-[100%]"
       >
         <DialogHeader>Its a simple dialog.</DialogHeader>
         <DialogBody>
@@ -31,7 +31,7 @@ function Profile() {
           blood sweat and tears, and I&apos;m never giving up, I&apos;m just
           getting started. I&apos;m up to something. Fan luv.
         </DialogBody>
-        <DialogFooter>
+        {/* <DialogFooter>
           <Button
             variant="text"
             color="red"
@@ -40,10 +40,10 @@ function Profile() {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="green" onClick={handleOpen}>
+          <Button className="mx-4 my-3" variant="gradient" color="green" onClick={handleOpen}>
             <span>Confirm</span>
           </Button>
-        </DialogFooter>
+        </DialogFooter> */}
       </Dialog>
     </>
   );
