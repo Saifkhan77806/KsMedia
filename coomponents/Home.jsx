@@ -37,13 +37,13 @@ function Home() {
         </div>       
       </div>
 
-{/* <div className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-md:grid-cols-2">
+<div className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-md:grid-cols-2 max-sm:grid-cols-1 p-3">
         <Card />
         <Card />
         <Card />
         <Card />
 
-</div> */}
+</div>
 
     </div>
   )
