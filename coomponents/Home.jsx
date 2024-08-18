@@ -5,6 +5,7 @@ import {Helmet} from "react-helmet";
 // import axios from "axios";
 import Api from "./Api";
 import Card from "./Card"
+import Blog from './Blog';
 
 function Home() {
 
@@ -13,7 +14,7 @@ function Home() {
 
   useEffect(()=>{
     Api.get("/get-blog").then((res)=>{
-      console.log(res)
+      // console.log(res.data)
       setBlog(res.data)
 
     }).catch((err)=>{
@@ -23,7 +24,7 @@ function Home() {
 
 // console.log("i am home page")
   
-
+  
   return (
     <div className='home mt-5'>
       <Helmet>
@@ -38,10 +39,13 @@ function Home() {
       </div>
 
 <div className="grid grid-cols-3 gap-5 max-[1024px]:grid-cols-2 max-md:grid-cols-2 max-sm:grid-cols-1 p-3">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+       
+        {
+          blog?.map((e)=>{
+           return <Blog key={e._id} id={e._id} />
+          })
+        
+        }
 
 </div>
 
