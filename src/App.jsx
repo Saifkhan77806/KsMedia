@@ -30,6 +30,7 @@ function App() {
         <Route path='/login' element={<Login />}/>
         <Route path="/blog/:id/edit-comment/:blogid/:commentid" element={<EditComment />}/>
         <Route path="/blog/:id/delete-comment/:blogid/:commentid" element={<DeleteComment />}/>
+        <Route path='/create-blog' element={<CreateBlog />}/>
     </Routes>
     </>
   )

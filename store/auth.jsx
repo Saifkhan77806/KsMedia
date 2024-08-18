@@ -1,10 +1,14 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
 import Api from "../coomponents/Api"
 
 export const AuthContext = createContext();
 
 
 export const Authprovider = ({children}) =>{
+     const [open,setOpen] = useState(false)
+     const opened = () =>{
+          setOpen(!open)
+     }
 
      const storetokenInls = (serverToken) =>{
           setToken(serverToken)
@@ -24,7 +28,7 @@ export const Authprovider = ({children}) =>{
      let isLogged = !!token;
 
 
-     useEffect(() =>{
+     useMemo(() =>{
           const fetchData = async() =>{
           try{
                await Api.get("/secret",{
@@ -48,7 +52,7 @@ export const Authprovider = ({children}) =>{
 
 
 
-     return <AuthContext.Provider value={{isLogged, storetokenInls, LogoutUser, user, userEmail}}>
+     return <AuthContext.Provider value={{isLogged, storetokenInls, LogoutUser, user, userEmail, opened, open}}>
             {children}
             </AuthContext.Provider>
 
