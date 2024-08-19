@@ -5,9 +5,9 @@ export const AuthContext = createContext();
 
 
 export const Authprovider = ({children}) =>{
-     const [open,setOpen] = useState(false)
+     const [opens,setOpens] = useState(false)
      const opened = () =>{
-          setOpen(!open)
+          setOpens(!opens)
      }
 
      const storetokenInls = (serverToken) =>{
@@ -52,7 +52,7 @@ export const Authprovider = ({children}) =>{
 
 
 
-     return <AuthContext.Provider value={{isLogged, storetokenInls, LogoutUser, user, userEmail, opened, open}}>
+     return <AuthContext.Provider value={{isLogged, storetokenInls, LogoutUser, user, userEmail, opened, opens}}>
             {children}
             </AuthContext.Provider>
 

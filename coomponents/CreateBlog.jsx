@@ -56,7 +56,6 @@ function CreateBlog() {
         <textarea placeholder="Thought here ..." rows="10" name="title" value={blog.title} onChange={inputs}></textarea>
         <input type="file" name='images'  onChange={files} />
         <input type="submit" />
-        <img src={`http://localhost:5000/images/images_1723258032911.jfif`}  alt='blogImage'/>
       </form>
     </div>
   )
